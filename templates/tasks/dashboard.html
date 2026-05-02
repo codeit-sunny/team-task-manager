@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Dashboard</h2>
+
+{% if user.userprofile.role == 'admin' %}
+    <a href="/projects/create/">Create Project</a><br><br>
+    <a href="/tasks/create/">Create Task</a><br><br>
+{% endif %}
+
+<a href="/projects/list/">View Projects</a><br><br>
+<a href="/tasks/list/">View Tasks</a><br><br>
+
+<a href="/logout/">Logout</a>
+</body>
+</html>

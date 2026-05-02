@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Update Task Status</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <select name="status">
+        <option value="todo">To Do</option>
+        <option value="progress">In Progress</option>
+        <option value="done">Done</option>
+    </select>
+
+    <button type="submit">Update</button>
+</form>
+</body>
+</html>

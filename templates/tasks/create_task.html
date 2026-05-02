@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+
+        <div class="card shadow p-4 mt-4">
+
+            <h2 class="text-center mb-4">Create Task</h2>
+
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    {{ form.title.label_tag }}
+                    {{ form.title }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.description.label_tag }}
+                    {{ form.description }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.project.label_tag }}
+                    {{ form.project }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.assigned_to.label_tag }}
+                    {{ form.assigned_to }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.status.label_tag }}
+                    {{ form.status }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.due_date.label_tag }}
+                    {{ form.due_date }}
+                </div>
+
+                <button class="btn btn-success w-100">
+                    Create Task
+                </button>
+            </form>
+
+            <hr>
+
+            <a href="/tasks/list/" class="btn btn-outline-primary w-100">
+                View Tasks
+            </a>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="mb-4">Dashboard</h2>
+
+<div class="row">
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h5>Total Tasks</h5>
+            <h2>{{ total_tasks }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h5>Completed</h5>
+            <h2>{{ completed_tasks }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h5>Pending</h5>
+            <h2>{{ pending_tasks }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h5>Overdue</h5>
+            <h2>{{ overdue_tasks }}</h2>
+        </div>
+    </div>
+
+</div>
+
+<hr>
+
+{% if user.userprofile.role == 'admin' %}
+<a class="btn btn-primary" href="/projects/create/">Create Project</a>
+<a class="btn btn-success" href="/tasks/create/">Create Task</a>
+{% endif %}
+
+<a class="btn btn-info" href="/projects/list/">Projects</a>
+<a class="btn btn-warning" href="/tasks/list/">Tasks</a>
+
+{% endblock %}
